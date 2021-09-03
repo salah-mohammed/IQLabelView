@@ -8,6 +8,8 @@
 
 @interface IQLabelView : UIView 
 
+@property (nonatomic, strong) UIColor *iconBordersColor;
+
 /**
  * Text color.
  *
