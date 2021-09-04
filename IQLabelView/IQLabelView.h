@@ -22,7 +22,7 @@
  *
  * Default: red color.
  */
-@property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic, strong) UIColor *dashBorderColor;
 
 /**
  * Name of text field font.

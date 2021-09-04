@@ -64,7 +64,7 @@ static IQLabelView *lastTouchedView;
     BOOL isShowingEditingHandles;
 }
 
-@synthesize textColor, borderColor;
+@synthesize textColor, dashBorderColor;
 @synthesize fontName, fontSize;
 @synthesize enableClose, enableRotate, enableMoveRestriction, showsContentShadow;
 @synthesize delegate;
@@ -109,7 +109,7 @@ static IQLabelView *lastTouchedView;
         
         self.backgroundColor = [UIColor clearColor];
         [self setAutoresizingMask:(UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth)];
-        borderColor = [UIColor redColor];
+        dashBorderColor = [UIColor redColor];
         
         labelTextField = [[UITextField alloc] initWithFrame:CGRectInset(self.bounds, globalInset, globalInset)];
         [labelTextField setAutoresizingMask:(UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight)];
@@ -121,7 +121,7 @@ static IQLabelView *lastTouchedView;
         labelTextField.text = @"";
         
         border = [CAShapeLayer layer];
-        border.strokeColor = borderColor.CGColor;
+        border.strokeColor = dashBorderColor.CGColor;
         border.fillColor = nil;
         border.lineDashPattern = @[@4, @3];
         
@@ -259,8 +259,8 @@ static IQLabelView *lastTouchedView;
 }
 - (void)setBorderColor:(UIColor *)color
 {
-    borderColor = color;
-    border.strokeColor = borderColor.CGColor;
+    dashBorderColor = color;
+    border.strokeColor = dashBorderColor.CGColor;
 }
 
 - (void)setTextAlpha:(CGFloat)alpha
